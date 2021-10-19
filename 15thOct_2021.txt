@@ -1,0 +1,29 @@
+
+
+
+MCU : MSP430 ---> arduino (onekta arduinor moto but purapuri arduino na)
+
+ADXL345: interrupt interfacing *****
+
+Neo6m *****
+
+SIM800l  *****
+
+battery level monitoring chip ---> need to inspect *******
+
+
+
+Step1: if movement detected, MSP430 will wake up from sleep mode
+ 
+ 
+step2: neo6m theke gps location nibe ---> shomossha hocche cold start period. (how to solve cold start 	  period issue) 
+
+step3: sim800l on korbo.. 
+step4: data transmit ---> google firebase 
+			   HTTP request + MQTT request 
+
+			   
+			   10 din last kore
+			   2 separate versions 
+			   superlock system ---> enabled 
+			   
