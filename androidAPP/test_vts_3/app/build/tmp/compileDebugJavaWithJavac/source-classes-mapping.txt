@@ -1,0 +1,22 @@
+com/example/test_vts_3/BuildConfig.java
+ com.example.test_vts_3.BuildConfig
+com/example/test_vts_3/MainActivity.java
+ com.example.test_vts_3.MainActivity
+ com.example.test_vts_3.MainActivity$1
+ com.example.test_vts_3.MainActivity$2
+com/example/test_vts_3/ProfileActivity.java
+ com.example.test_vts_3.ProfileActivity
+com/example/test_vts_3/PhoneRegActivity.java
+ com.example.test_vts_3.PhoneRegActivity
+ com.example.test_vts_3.PhoneRegActivity$1
+ com.example.test_vts_3.PhoneRegActivity$2
+com/example/test_vts_3/VerifyPhoneActivity.java
+ com.example.test_vts_3.VerifyPhoneActivity
+ com.example.test_vts_3.VerifyPhoneActivity$1
+ com.example.test_vts_3.VerifyPhoneActivity$2
+ com.example.test_vts_3.VerifyPhoneActivity$3
+ com.example.test_vts_3.VerifyPhoneActivity$4
+com/example/test_vts_3/RegistrationActivity.java
+ com.example.test_vts_3.RegistrationActivity
+ com.example.test_vts_3.RegistrationActivity$1
+ com.example.test_vts_3.RegistrationActivity$2
