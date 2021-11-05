@@ -19,7 +19,7 @@
         android:text="Track your Vehicle"
         android:textSize="50dp"
         android:gravity="center"
-        android:textColor="@color/blackPrimary"
+        android:textColor="?attr/colorSecondaryVariant"
         android:paddingBottom="40dp"/>
 
     <TextView
@@ -29,7 +29,7 @@
         android:text="Anywhere on the world"
         android:textSize="25dp"
         android:gravity="center"
-        android:textColor="@color/blackSecondary"
+        android:textColor="?attr/colorOnSecondary"
         android:paddingBottom="40dp"/>
 
     <androidx.cardview.widget.CardView
@@ -39,7 +39,7 @@
         android:layout_gravity="center"
         android:clickable="true"
         android:paddingBottom="20dp"
-        app:cardBackgroundColor="#DD151515"
+        app:cardBackgroundColor="?attr/colorSecondary"
         app:cardCornerRadius="30dp"
         app:cardElevation="3dp"
         app:cardPreventCornerOverlap="false"
@@ -51,10 +51,12 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
             android:text="Get Started"
-            android:textColor="@color/white"
             android:textAllCaps="false"
-            android:textSize="20dp"/>
+            android:textColor="?attr/colorPrimary"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
     </androidx.cardview.widget.CardView>
@@ -66,7 +68,7 @@
         android:layout_gravity="center"
         android:clickable="true"
         android:paddingTop="20dp"
-        app:cardBackgroundColor="#E3E3E3"
+        app:cardBackgroundColor="?attr/colorPrimary"
         app:cardCornerRadius="30dp"
         app:cardElevation="3dp"
         app:cardPreventCornerOverlap="false"
@@ -78,10 +80,12 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
             android:text="Sign In"
-            android:textColor="@color/blackSecondary"
             android:textAllCaps="false"
-            android:textSize="20dp"/>
+            android:textColor="?attr/colorOnSecondary"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
 

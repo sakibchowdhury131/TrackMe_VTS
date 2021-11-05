@@ -2,6 +2,7 @@ package com.example.trackme_nov_edition;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Signing In", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(MainActivity.this, "Signing In", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, SignInActivity.class));
             }
         });
 
@@ -52,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         getStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Getting Started", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(MainActivity.this, "Getting Started", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
             }
         });
     }
