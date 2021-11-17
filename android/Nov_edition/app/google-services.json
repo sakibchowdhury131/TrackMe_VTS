@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "627411714147",
+    "project_id": "thdimensionprojectdb",
+    "storage_bucket": "thdimensionprojectdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627411714147:android:7c3f0277913f632194f856",
+        "android_client_info": {
+          "package_name": "com.example.trackme_nov_edition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627411714147-7ib31c56tu8avsrps3ei7fmkuplf0e4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6GEOxDnvEzItyCnvXXHGiYUSDkjIIggQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627411714147-7ib31c56tu8avsrps3ei7fmkuplf0e4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
