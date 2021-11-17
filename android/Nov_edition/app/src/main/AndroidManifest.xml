@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrackMe_Nov_edition">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrationActivity"
             android:exported="true" />
         <activity

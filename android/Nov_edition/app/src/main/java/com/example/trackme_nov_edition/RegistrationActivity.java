@@ -1,20 +1,33 @@
 package com.example.trackme_nov_edition;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
     private EditText firstName, lastName, email, password, recheckPassword;
     private Button verifyEmail;
     private ProgressBar progressBar;
@@ -63,9 +76,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
         // verify email button event handle
         verifyEmail.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
             // when the login button is pressed, go to the register method
+                // and hide the keyboard
+                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 register();
             }
 
@@ -136,6 +153,48 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
+
+                mAuth.createUserWithEmailAndPassword(_email, _password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            mUser = mAuth.getCurrentUser();
+                            String userID = mUser.getUid().toString();
+                            DatabaseReference myRef = database.getReference("userDB/"+userID);
+                            myRef.child("FirstName").setValue(_fname);
+                            myRef.child("LastName").setValue(_lname);
+                            myRef.child("Email").setValue(_email);
+                            myRef.child("Password").setValue(_password);
+
+
+                            mUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(RegistrationActivity.this, "A verification email has been sent to your email", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                        sendUserToNextActivity();
+
+                                    } else {
+                                        Toast.makeText(RegistrationActivity.this, "Email verification is pending", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                    }
+                                }
+                            });
+
+                        }  else {
+                            Toast.makeText(RegistrationActivity.this, "Email is already in use", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
+                        }
+                    }
+
+                    private void sendUserToNextActivity() {
+                        Intent intent = new Intent(RegistrationActivity.this, VerifyActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }

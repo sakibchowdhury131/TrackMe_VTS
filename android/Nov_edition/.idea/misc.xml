@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.2625" />
+        <entry key="app/src/main/res/layout/activity_verify.xml" value="0.23958333333333334" />
       </map>
     </option>
   </component>

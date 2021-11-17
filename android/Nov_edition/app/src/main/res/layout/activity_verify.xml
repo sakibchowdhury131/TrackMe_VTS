@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignInActivity">
+    tools:context=".VerifyActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,85 +33,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Sign In"
+            android:text="Verify Your Email"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="?attr/colorSecondary"/>
 
+
         <TextView
-            android:id="@+id/incorrectmsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text=""
+            android:text="A verification email has been sent to your email account. Please click the provided link to verify your email."
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="?attr/colorSecondaryVariant"/>
 
-        <androidx.cardview.widget.CardView
+
+
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="5dp"
-            android:minHeight="2dp">
-
-            <EditText
-                android:id="@+id/signInEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/blackSecondary"
-                android:textColor="@color/blackPrimary"
-                android:background="@color/edittextbackground"/>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="5dp"
-            android:minHeight="2dp">
-
-            <EditText
-                android:id="@+id/signInPass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textColorHint="@color/blackSecondary"
-                android:textColor="@color/blackPrimary"
-                android:background="@color/edittextbackground"/>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/forgotpass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Forgot Password?"
-                android:layout_marginTop="20dp"
-                android:textColor="?attr/colorOnSecondary"
-                android:textSize="14dp"/>
-
-        </LinearLayout>
-
+            android:text="Already Verified? Sign in now."
+            android:layout_marginTop="20dp"
+            android:textColor="?attr/colorOnSecondary"
+            android:textSize="14dp"/>
 
         <androidx.cardview.widget.CardView
             android:layout_marginTop="20dp"
@@ -127,7 +73,7 @@
             app:cardUseCompatPadding="true">
 
             <Button
-                android:id="@+id/signinbutton"
+                android:id="@+id/gotosignin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -149,7 +95,7 @@
 
 
         <ProgressBar
-            android:id="@+id/signInProgress"
+            android:id="@+id/verifyProgress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"/>
