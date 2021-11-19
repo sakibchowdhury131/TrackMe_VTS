@@ -7,15 +7,21 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class VerifyActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
-    private Button signInBtn;
+public class PassResetActivity extends AppCompatActivity {
+
+    private Button resend, signIn;
+    private FirebaseAuth mAuth;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify);
+        setContentView(R.layout.activity_pass_reset);
+
 
         // change the status bar icon colors
         boolean shouldChangeStatusBarTintToDark = true;
@@ -32,7 +38,6 @@ public class VerifyActivity extends AppCompatActivity {
         }
 
 
-
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.__regActivityToolbar);
 
         // back button
@@ -44,19 +49,47 @@ public class VerifyActivity extends AppCompatActivity {
         });
 
 
-        signInBtn = findViewById(R.id.gotosignin);
-        signInBtn.setOnClickListener(new View.OnClickListener() {
+        resend = findViewById(R.id.resendBtn);
+        signIn = findViewById(R.id.signInBtn);
+        mAuth = FirebaseAuth.getInstance();
+
+
+        // get email address from previous activity
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            email = extras.getString("email");
+            //The key argument here must match that used in the other activity
+        }
+
+
+        resend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VerifyActivity.this, SignInActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                resendResetEmail();
             }
         });
 
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoSignInActivity();
+            }
+        });
     }
 
-    void handleBackButton(){
-        startActivity(new Intent(VerifyActivity.this, RegistrationActivity.class));
+    private void resendResetEmail(){
+        mAuth.sendPasswordResetEmail(email);
+        Toast.makeText(PassResetActivity.this, "Sending a new password reset email", Toast.LENGTH_SHORT).show();
+    }
+
+
+    private void gotoSignInActivity(){
+        Intent intent = new Intent(PassResetActivity.this, SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    private void handleBackButton(){
+        startActivity(new Intent(PassResetActivity.this, SignInActivity.class));
     }
 }

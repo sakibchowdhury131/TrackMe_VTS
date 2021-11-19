@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_pass_reset.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_verify.xml" value="0.23958333333333334" />
