@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -56,9 +57,17 @@ public class SignInActivity extends AppCompatActivity {
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                try{
+                    InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
                 login();
+
             }
         });
 
@@ -84,6 +93,7 @@ public class SignInActivity extends AppCompatActivity {
     void login(){
         String _email = email.getText().toString();
         String _password = password.getText().toString();
+        Log.d("email", _email);
 
         if (_email.isEmpty()){
             email.setError("Enter your email address");

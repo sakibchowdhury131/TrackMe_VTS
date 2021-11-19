@@ -81,8 +81,15 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View v) {
             // when the login button is pressed, go to the register method
                 // and hide the keyboard
-                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+                try {
+                    InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
                 register();
             }
 
