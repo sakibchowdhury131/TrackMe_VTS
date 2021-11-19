@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/mapMenuId"
+            android:title="Map"
+            android:icon="@drawable/ic_baseline_home_24"
+            />
+
+        <item
+            android:id="@+id/profileMenuId"
+            android:title="Profile"
+            android:icon="@drawable/ic_baseline_person_24"
+            />
+
+        <item
+            android:id="@+id/adddeviceMenuId"
+            android:title="Add Device"
+            android:icon="@drawable/ic_baseline_chat_24"
+            />
+    </group>
+
+    <item android:title="Communicate">
+
+        <menu>
+            <item
+                android:id="@+id/shareMenuId"
+                android:title="Share"
+                android:icon="@drawable/ic_baseline_share_24"
+                />
+
+            <item
+                android:id="@+id/signOutMenuId"
+                android:title="Sign Out"
+                android:icon="@drawable/ic_baseline_contact_phone_24"
+                />
+
+        </menu>
+    </item>
+
+</menu>
