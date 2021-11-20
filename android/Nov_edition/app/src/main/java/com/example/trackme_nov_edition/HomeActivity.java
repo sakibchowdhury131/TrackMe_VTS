@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Build;
@@ -85,6 +86,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
         switch (item.getItemId()){
             case R.id.SignOutId:
                 FirebaseAuth.getInstance().signOut();
@@ -92,6 +96,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                break;
+
+            case R.id.AddNewTrackerId:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddNewTrackerFragment()).commit();
+                break;
+
+            case R.id.profileMenuId:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+                break;
+            case R.id.MapId:
+                break;
+            case R.id.PaymentId:
+                break;
+            case R.id.HelpCenterId:
+                break;
+            case R.id.SettingsId:
+                break;
+            case R.id.termsandconditionsid:
                 break;
 
             default:

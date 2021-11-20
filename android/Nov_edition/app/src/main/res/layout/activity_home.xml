@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerId"
     android:orientation="vertical"
-    tools:openDrawer="start"
+
     tools:context=".HomeActivity">
 
 
@@ -34,11 +34,12 @@
 
 
 
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationId2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="?attr/colorPrimary"
+        android:background="@color/selectedItemBackground"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu_layout"
         android:layout_gravity="start"

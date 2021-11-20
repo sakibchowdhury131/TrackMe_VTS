@@ -12,4 +12,5 @@
     <color name="blackPrimary">#272525</color>
     <color name="blackSecondary">#373434</color>
     <color name="edittextbackground">#DBDBDB</color>
+    <color name="selectedItemBackground">#BC9F4B</color>
 </resources>

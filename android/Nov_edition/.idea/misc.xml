@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/drawer_item_color.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_face_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_gps_fixed_24.xml" value="0.2598958333333333" />
@@ -12,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_payment_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2598958333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_tag_faces_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.24375" />
@@ -20,6 +22,7 @@
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_verify.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_add_new_tracker.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/fragment_adddevice.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.246875" />
