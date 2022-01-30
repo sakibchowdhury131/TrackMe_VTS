@@ -1,18 +1,20 @@
 
 #include <SoftwareSerial.h>
 
-SoftwareSerial SIM868(3, 2); //RX, TX
+SoftwareSerial SIM868(8, 7); //RX, TX
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   SIM868.begin(9600);
   Serial.println("all ok ");
+  SIM868.println("AT");
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   updateSerial();
+  
 }
 
 void updateSerial()

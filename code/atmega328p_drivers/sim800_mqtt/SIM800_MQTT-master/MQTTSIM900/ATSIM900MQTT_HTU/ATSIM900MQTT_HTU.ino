@@ -1,7 +1,7 @@
 #include "mqtt.h"
 #include <SoftwareSerial.h>
 
-SoftwareSerial GPRS(3, 2); //RX, TX
+SoftwareSerial GPRS(8, 7); //RX, TX
 
 //but is more 'smooth'
 #define NUMSAMPLES 5
